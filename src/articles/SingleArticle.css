@@ -1,0 +1,31 @@
+.article_div {
+    padding: 20px;
+    width: 80%;
+    border: 1px solid rgb(139,235,254, 0.7);
+    border-radius: 10px;
+    margin: 30px;
+    background-color: rgb(139,235,254, 0.05);
+    z-index: 9999
+}
+
+@media only screen and (max-width: 1020px) {
+    .article_div {
+        width: 70%; 
+    }
+  }
+
+  @media only screen and (max-width: 815px) {
+    .article_div {
+        width: 65%; 
+    }
+  }
+
+  @media only screen and (max-width: 730px) {
+    .article_div {
+        width: 100%;
+    }
+  }
+
+
+
+  

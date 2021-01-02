@@ -4,10 +4,11 @@ import MenuItem from "@material-ui/core/MenuItem";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
 import TextField from '@material-ui/core/TextField';
+import './InputComponents.css';
 
 
 export const SelectField = props => (
-    <FormControl className={props.className} variant="outlined">
+    <FormControl className={props.className} variant="outlined" style={{margin: 20}} id="select_field" >
       {props.label ? (<InputLabel id={props.label} >{props.label}</InputLabel> ) : "" }
       <Select
         labelId={props.label}

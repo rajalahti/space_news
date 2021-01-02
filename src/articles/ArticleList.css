@@ -1,6 +1,28 @@
 section {
-    grid-area: 2 / 1 / -1 / -3;
+    grid-area: 2 / 2 / -1 / -3;
     display: flex;
     flex-wrap: wrap;
     align-content: flex-start;
 }
+
+.topic_select {
+    display: 'none';
+}
+
+@media only screen and (max-width: 1080px) {
+    section {
+        grid-area: 2 / 1 / -1 / -3; 
+    }
+  }
+
+  @media only screen and (max-width: 730px) {
+    section {
+        grid-area: 2 / 1 / -1 / -1; 
+    }
+  }
+
+  @media only screen and (max-width: 560px) {
+    section {
+        margin-top: 50px;
+    }
+  }

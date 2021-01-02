@@ -11,3 +11,10 @@ h1 {
     display: flex;
     flex-direction: row;
 }
+
+@media only screen and (max-width: 560px) {
+    .nav_content {
+        flex-direction: column;
+        font-size: 0.8em;
+    }
+  }

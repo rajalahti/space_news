@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import { Header } from "arwes";
 import { useDispatch } from "react-redux";
-import { filterArticles } from '../articles/ArticleSlice';
-import './Nav.css';
+import { filterArticles } from "../articles/ArticleSlice";
+import "./Nav.css";
 import { TextInput } from "./InputComponents";
 import { makeStyles } from "@material-ui/core/styles";
 
-const useStyles = makeStyles({
+export const useStyles = makeStyles({
   root: {
-    width: "300px",
+    width: "250px",
     marginBottom: 10,
     "& .MuiOutlinedInput-input": {
       color: "#029dbb",
@@ -37,8 +37,8 @@ const useStyles = makeStyles({
     "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
       borderColor: "#029dbb",
     },
-    '& label.Mui-focused': {
-        color: '#029dbb',
+    "& label.Mui-focused": {
+      color: "#029dbb",
     },
   },
 });
@@ -47,7 +47,7 @@ export default function Nav() {
   const classes = useStyles();
   const dispatch = useDispatch();
 
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState("");
 
   const handleSearchTermChange = (e) => {
     setSearchTerm(e.target.value);
@@ -56,15 +56,19 @@ export default function Nav() {
 
   return (
     <header>
-      <div style={{ padding: 20 }} >
+      <div style={{ padding: 20 }}>
         <Header animate>
           <div className="nav_content">
-          <h1 style={{ margin: 0, width: 300 }}>Space News</h1>
-          <TextInput label="Search" className={classes.root} onChange={handleSearchTermChange} />
+            <h1 style={{ margin: 0, width: 300 }}>Space News</h1>
+            <TextInput
+              label="Search"
+              value={searchTerm}
+              className={classes.root}
+              onChange={handleSearchTermChange}
+            />
           </div>
         </Header>
-        
       </div>
     </header>
   );
-};
+}
