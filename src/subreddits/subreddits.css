@@ -1,0 +1,7 @@
+.subreddits {
+    grid-area: 2 / 11 / -1 / span 3;
+    position: fixed;
+    right: 0;
+    top: 100px;
+    z-index: 999;
+}

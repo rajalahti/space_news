@@ -1,0 +1,19 @@
+#App {
+  background-image: url(./scifi.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  display: grid;
+  grid-template: 100px 85% 5% / repeat(12, 1fr);
+  grid-column-gap: 20px;
+  width: 100%;
+  min-height: 100%;
+}
+
+#left_puffs {
+  grid-area: 2 / 1 / -1 / span 2;
+}
+
+#right_puffs {
+  grid-area: 2 / 11 / -1 / span 2;
+}
