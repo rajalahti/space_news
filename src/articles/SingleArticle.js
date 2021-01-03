@@ -10,14 +10,16 @@ import "./SingleArticle.css";
 const useImage = (article) => {
   let urlToCheck = article.url_overridden_by_dest;
   if (urlToCheck && urlToCheck.startsWith("https://www.youtube")) {
-    urlToCheck = urlToCheck.split("=");
-    urlToCheck = urlToCheck[urlToCheck.length - 1];
+    //urlToCheck = urlToCheck.split("=");
+    //urlToCheck = urlToCheck[urlToCheck.length - 1];
+    urlToCheck = new URL(urlToCheck);
+    const urlParameter = urlToCheck.searchParams.get("v");
     return (
       <iframe
         title={article.title}
         width="60%"
         height="250"
-        src={"https://www.youtube.com/embed/" + urlToCheck}
+        src={"https://www.youtube.com/embed/" + urlParameter}
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen={true}
