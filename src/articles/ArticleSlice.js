@@ -11,7 +11,7 @@ const initialState = {
 
 // Async fetch for posts to fake api
 export const fetchArticles = createAsyncThunk('articles/fetchArticles', async (subreddit) => {
-    const response = await axios.get(`https://www.reddit.com/r/${subreddit}.json`);
+    const response = await axios.get(`https://www.reddit.com/r/${subreddit.toLowerCase()}.json`);
     return response.data.data.children;
 });
 
@@ -21,7 +21,7 @@ const articleSlice = createSlice({
     initialState,
     reducers: {
       subredditChanged(state, action) {
-        const newSubreddit = action.payload.toLowerCase();
+        const newSubreddit = action.payload;
         state.subreddit = newSubreddit;
       },
       filterArticles(state, action) {

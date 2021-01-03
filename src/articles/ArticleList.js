@@ -31,7 +31,6 @@ export default function ArticleList() {
 
   const [loading, setLoading] = useState(false);
 
-  const [selectedSubreddit, setSelectedSubreddit] = useState("Spaceflight");
 
   useEffect(() => {
     if (articleStatus === "loading") {
@@ -44,15 +43,15 @@ export default function ArticleList() {
   const handleSubredditChange = (e) => {
     dispatch(subredditChanged(e.target.value));
     dispatch(fetchArticles(e.target.value));
-    setSelectedSubreddit(e.target.value);
   };
+
   return (
-    <section class="article_list">
+    <section className="article_list">
       <div className="topic_select">
         <SelectField
           values={subreddits}
           label="Select topic"
-          stateValue={selectedSubreddit}
+          stateValue={subreddit}
           onChange={handleSubredditChange}
           className={classes.root}
         />

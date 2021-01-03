@@ -24,7 +24,7 @@ export default function Subreddits() {
 
   return (
     <div className="subreddits">
-      <div>
+      <div >
         <Project animate header="SELECT TOPIC">
           {subreddits.map((item, index) => {
             return (
