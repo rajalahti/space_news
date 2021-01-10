@@ -15,6 +15,7 @@ const useImage = (article) => {
     urlToCheck = new URL(urlToCheck);
     const urlParameter = urlToCheck.searchParams.get("v");
     return (
+      <div class="video-container">
       <iframe
         title={article.title}
         width="60%"
@@ -22,8 +23,9 @@ const useImage = (article) => {
         src={"https://www.youtube.com/embed/" + urlParameter}
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen={true}
+        allowfullscreen
       ></iframe>
+      </div>
     );
   }
   if (urlToCheck && urlToCheck.endsWith("jpg")) {
@@ -31,7 +33,8 @@ const useImage = (article) => {
       <Image
         style={{
           paddingLeft: 20,
-          width: "80%",
+          paddingRight: 20,
+          width: "100%",
           heigth: "auto",
           objectFit: "cover",
         }}
