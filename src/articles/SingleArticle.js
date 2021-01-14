@@ -72,7 +72,7 @@ export default function SingleArticle(props) {
   };
 
   const renderComments = (permalink) => {
-    if (selectedThread === permalink && threadComments) {
+    if (selectedThread.toLowerCase() === permalink.toLowerCase() && threadComments) {
       if (commentStatus === "loading") {
         return <Loading />;
       } else if (commentStatus === "succeeded") {
